@@ -570,11 +570,18 @@ struct tgl_message_media {
       union {
         struct tgl_photo *photo;
         struct tgl_document *document;
+        struct tgl_encr_document *encr_document;
       };
       char *caption;
     };
     
-    struct tgl_encr_document *encr_document;
+    
+    struct {
+        struct tgl_audio;
+        char *caption;
+        char *title;
+        char *performer;
+    }
     struct tgl_webpage *webpage;
 
     struct tgl_geo geo;
