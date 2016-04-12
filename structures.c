@@ -1271,11 +1271,15 @@ void tglf_fetch_message_media (struct tgl_state *TLS, struct tgl_message_media *
     M->type = tgl_message_media_video;
     M->document = tglf_fetch_alloc_video (TLS, DS_MM->video);
     M->caption = DS_STR_DUP (DS_MM->caption);
+    M->duration = DS_STR_DUP (DS_MM->duration);
     break;
   case CODE_message_media_audio:
     M->type = tgl_message_media_audio;
     M->document = tglf_fetch_alloc_audio (TLS, DS_MM->audio);
     M->caption = DS_STR_DUP (DS_MM->caption);
+    M->title = DS_STR_DUP (DS_MM->title);
+    M->performer = DS_STR_DUP (DS_MM->performer);
+    M->duration = DS_STR_DUP (DS_MM->duration);
     break;
   case CODE_message_media_document:
     M->type = tgl_message_media_document;
